@@ -1,0 +1,1 @@
+MeriGali is a city-guide platform built to help people navigate their local area better. It provides essential city information, estimated auto/rickshaw fares for local travel, and a dedicated section where shopkeepers can list and showcase their shops — making it easier for residents to discover local businesses and services.
