@@ -1,0 +1,256 @@
+  /* ============================================
+     COLOR + TYPE TOKENS
+     (change these and the whole site's look updates)
+     ============================================ */
+  :root{
+    --ink:        #23241f;   /* main text */
+    --paper:      #f6f2e9;   /* page background, warm off-white */
+    --panel:      #ffffff;   /* card background */
+    --marigold:   #e8a13d;   /* primary accent — street-vendor marigold */
+    --indigo:     #2c3e6b;   /* secondary accent — old signboard blue */
+    --brick:      #b6472f;   /* alert / auto-fare accent */
+    --line:       #ded5c2;   /* hairline borders */
+    --radius:     10px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height:1.5;
+  }
+
+  h1,h2,h3{
+    font-family: 'Trebuchet MS', 'Verdana', sans-serif;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.4em 0;
+  }
+
+  a { color: var(--indigo); }
+
+  /* ============================================
+     HEADER / NAV
+     ============================================ */
+  header{
+    background: var(--ink);
+    color: #f6f2e9;
+    padding: 18px 24px;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  header .brand{
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 1.4rem;
+    font-weight:bold;
+  }
+  header .brand span{ color: var(--marigold); }
+  nav a{
+    color:#f6f2e9;
+    text-decoration:none;
+    margin-left: 18px;
+    font-family:'Trebuchet MS', sans-serif;
+    font-size:0.95rem;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2px;
+  }
+  nav a:hover{ border-bottom: 2px solid var(--marigold); }
+
+  /* ============================================
+     HERO
+     ============================================ */
+  .hero{
+    padding: 60px 24px 50px;
+    text-align:center;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(232,161,61,0.15), transparent 40%),
+      radial-gradient(circle at 80% 60%, rgba(44,62,107,0.10), transparent 40%);
+  }
+  .hero h1{
+    font-size: 2.6rem;
+    color: var(--indigo);
+  }
+  .hero p{
+    max-width: 520px;
+    margin: 0 auto;
+    color:#54544c;
+  }
+  .hero .cityname{
+    color: var(--marigold);
+  }
+
+  /* City picker dropdown in the hero */
+  .city-picker{
+    margin-top: 20px;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background: var(--panel);
+    border:1px solid var(--line);
+    border-radius: 30px;
+    padding: 8px 8px 8px 18px;
+  }
+  .city-picker label{
+    font-family:'Trebuchet MS', sans-serif;
+    font-size:0.85rem;
+    color:#54544c;
+    margin:0;
+  }
+  .city-picker select{
+    border:none;
+    background: var(--marigold);
+    color:#2a1c05;
+    font-family:'Trebuchet MS', sans-serif;
+    font-weight:bold;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size:0.9rem;
+    cursor:pointer;
+  }
+
+  /* ============================================
+     SECTION SHELL
+     ============================================ */
+  section{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 24px;
+  }
+  section > h2{
+    font-size:1.5rem;
+    color: var(--indigo);
+    border-bottom: 2px solid var(--line);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+  }
+
+  /* ============================================
+     CITY INFO CARDS
+     ============================================ */
+  .info-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap:16px;
+  }
+  .info-card{
+    background: var(--panel);
+    border:1px solid var(--line);
+    border-radius: var(--radius);
+    padding:16px;
+  }
+  .info-card h3{
+    font-size:1rem;
+    color: var(--marigold);
+  }
+  .info-card p{ margin:0; font-size:0.92rem; color:#54544c; }
+
+  /* ============================================
+     AUTO FARE TABLE
+     ============================================ */
+  table{
+    width:100%;
+    border-collapse: collapse;
+    background: var(--panel);
+    border-radius: var(--radius);
+    overflow:hidden;
+  }
+  th, td{
+    text-align:left;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--line);
+    font-size:0.95rem;
+  }
+  th{
+    background: var(--brick);
+    color:#fff;
+    font-family:'Trebuchet MS', sans-serif;
+    font-weight:normal;
+  }
+  tr:last-child td{ border-bottom:none; }
+
+  /* ============================================
+     SHOP LISTINGS
+     ============================================ */
+  #shopList{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap:16px;
+    margin-bottom: 28px;
+  }
+  .shop-card{
+    background: var(--panel);
+    border:1px solid var(--line);
+    border-radius: var(--radius);
+    padding:16px;
+  }
+  .shop-card h3{ font-size:1.05rem; color: var(--indigo); }
+  .shop-card .tag{
+    display:inline-block;
+    background: rgba(232,161,61,0.18);
+    color:#8a5a13;
+    font-size:0.75rem;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-family:'Trebuchet MS', sans-serif;
+    margin-bottom:6px;
+  }
+  .shop-card p{ margin:6px 0 0; font-size:0.9rem; color:#54544c; }
+
+  /* ============================================
+     ADD SHOP FORM
+     ============================================ */
+  form{
+    background: var(--panel);
+    border:1px solid var(--line);
+    border-radius: var(--radius);
+    padding:20px;
+    display:grid;
+    gap:12px;
+    max-width: 480px;
+  }
+  label{
+    font-family:'Trebuchet MS', sans-serif;
+    font-size:0.85rem;
+    color:#54544c;
+    display:block;
+    margin-bottom:4px;
+  }
+  input, select{
+    width:100%;
+    padding:9px 10px;
+    border:1px solid var(--line);
+    border-radius:6px;
+    font-family: inherit;
+    font-size:0.95rem;
+    background:#fffdf9;
+  }
+  button{
+    background: var(--marigold);
+    color:#2a1c05;
+    border:none;
+    padding:11px 16px;
+    border-radius:6px;
+    font-family:'Trebuchet MS', sans-serif;
+    font-weight:bold;
+    font-size:0.95rem;
+    cursor:pointer;
+  }
+  button:hover{ background:#d6942f; }
+
+  footer{
+    text-align:center;
+    padding: 24px;
+    color:#8a8577;
+    font-size:0.85rem;
+  }
+
+  .note{
+    font-size:0.8rem;
+    color:#8a8577;
+    margin-top: -8px;
+  }

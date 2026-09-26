@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MeriGali — Your City, One Page</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================
+       HEADER
+       ============================================ -->
+  <header>
+    <div class="brand">Meri<span>Gali</span></div>
+    <nav>
+      <a href="#city">City Info</a>
+      <a href="#fares">Auto Fares</a>
+      <a href="#shops">Shops</a>
+      <a href="#addshop">List Your Shop</a>
+    </nav>
+  </header>
+
+  <!-- ============================================
+       HERO
+       ============================================ -->
+  <div class="hero">
+    <h1>Everything about <span class="cityname" id="heroCityName">Meerut</span>, on one page</h1>
+    <p>City info, honest auto fares, and local shops — built for the people who actually live here.</p>
+
+    <!-- City picker: choosing here re-renders city info, fares, and shops below -->
+    <div class="city-picker">
+      <label for="citySelect">Choose your city:</label>
+      <select id="citySelect">
+        <option value="Meerut">Meerut</option>
+        <option value="lucknow">Lucknow</option>
+        <option value="jaipur">Jaipur</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- ============================================
+       CITY INFO SECTION
+       ============================================ -->
+  <section id="city">
+    <h2>About the City</h2>
+    <!-- This grid starts empty. JS fills it based on the selected city. -->
+    <div class="info-grid" id="infoGrid"></div>
+  </section>
+
+  <!-- ============================================
+       AUTO FARE SECTION
+       ============================================ -->
+  <section id="fares">
+    <h2>Auto Fare Guide</h2>
+    <table>
+      <thead>
+        <tr><th>Route</th><th>Distance</th><th>Approx. Fare</th></tr>
+      </thead>
+      <!-- Fare rows start empty. JS fills this based on the selected city. -->
+      <tbody id="fareTable"></tbody>
+    </table>
+    <p class="note">Fares are approximate and can vary by traffic and time of day. (In v2, this table can come from your database instead of being hardcoded.)</p>
+  </section>
+
+  <!-- ============================================
+       SHOP LISTINGS SECTION
+       ============================================ -->
+  <section id="shops">
+    <h2>Local Shops</h2>
+    <!-- Shop cards start empty. JS fills this based on the selected city;
+         shops added via the form below get added to the current city's list. -->
+    <div id="shopList"></div>
+  </section>
+
+  <!-- ============================================
+       ADD SHOP FORM SECTION
+       ============================================ -->
+  <section id="addshop">
+    <h2>List Your Shop</h2>
+    <form id="shopForm">
+      <div>
+        <label for="shopName">Shop Name</label>
+        <input type="text" id="shopName" required placeholder="e.g. Gupta General Store">
+      </div>
+      <div>
+        <label for="shopCategory">Category</label>
+        <select id="shopCategory">
+          <option>Electronics</option>
+          <option>Bakery</option>
+          <option>Clothing</option>
+          <option>Grocery</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div>
+        <label for="shopAddress">Address / Landmark</label>
+        <input type="text" id="shopAddress" required placeholder="e.g. Near Clock Tower">
+      </div>
+      <button type="submit">Add Shop</button>
+    </form>
+    <p class="note">Right now this just adds the shop to the page (in your browser only — nothing is saved). Once you connect a Flask + SQLite backend, this same form will save shops permanently for every visitor.</p>
+  </section>
+
+  <footer>
+    Prototype built to show layout &amp; structure — no backend yet.
+  </footer>
+
+  <!-- ============================================
+       JAVASCRIPT
+       This is the part that makes the "Add Shop" form
+       actually update the page without reloading.
+       Study this closely — it's the same pattern
+       you'll use everywhere in web dev.
+       ============================================ -->
+  <script src="script.js"></script>
+
+</body>
+</html>
