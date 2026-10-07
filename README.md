@@ -2,6 +2,8 @@
 
 MeriGali is a city-guide web app that helps people navigate their local area. It provides essential city information, estimated auto/rickshaw fares for local travel, and a dedicated section where shopkeepers can list and showcase their shops — making it easier for residents to discover local businesses and services.
 
+ Live Demo =>  https://abhinav0919.github.io/Merigali/
+ 
 ## Features
 
 - 🏙️ **City Information** — Browse useful local details about the city
